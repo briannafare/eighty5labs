@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eighty5labs | Agentic Marketing Infrastructure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg: #fbfbfa;
+        --surface: rgba(255, 255, 255, 0.55);
+        --fg: #000;
+        --border: rgba(0, 0, 0, 0.06);
+        --border-strong: rgba(0, 0, 0, 0.12);
+        
+        --accent-orange: #f36421;
+        --accent-blue: #0070f3;
+        --accent-mint: #00dfd8;
+        --accent-magenta: #eb00ff;
+        
+        --radius-pill: 999px;
+        --radius-panel: 12px;
+        --radius-frame: 16px;
+        
+        --container-width: 1200px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        background-color: var(--bg);
+        color: var(--fg);
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: -0.01em;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      #global-grid {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background-image: 
+          linear-gradient(to right, rgba(0,0,0,0.035) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0,0,0,0.035) 1px, transparent 1px),
+          linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px);
+        background-size: 72px 72px, 72px 72px, 240px 240px, 240px 240px;
+        mask-image: radial-gradient(ellipse at top, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 78%);
+      }
+
+      #surface-noise {
+        position: fixed;
+        inset: -200%;
+        width: 400%;
+        height: 400%;
+        background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        opacity: 0.045;
+        pointer-events: none;
+        z-index: 999;
+        mix-blend-mode: multiply;
+      }
+
+      .app-shell { position: relative; z-index: 1; width: 100%; overflow-x: hidden; }
+
+      .container-custom {
+        max-width: var(--container-width);
+        margin-inline: auto;
+        padding-inline: clamp(16px, 4vw, 32px);
+        width: 100%;
+        position: relative;
+      }
+
+      .section-frame {
+        position: relative;
+        border-top: 1px solid var(--border);
+        background: transparent;
+        width: 100%;
+        padding-top: clamp(64px, 10vw, 128px);
+        padding-bottom: clamp(64px, 10vw, 128px);
+      }
+
+      .section-frame .container-custom::before,
+      .section-frame .container-custom::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(0,0,0,0.04);
+        pointer-events: none;
+        opacity: 0.6;
+        z-index: 1;
+        display: none;
+      }
+
+      @media (min-width: 1024px) {
+        .section-frame .container-custom::before { display: block; left: 33.333%; }
+        .section-frame .container-custom::after { display: block; left: 66.666%; }
+      }
+
+      .btn-pill {
+        border-radius: var(--radius-pill);
+        padding: 0.65rem 1.4rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      }
+      .btn-pill:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+
+      /* SIGNATURE AMBIENT ANIMATION - Optimized for 2-3s Visibility */
+      .hero-arc {
+        position: absolute;
+        inset: -40%;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.16;
+        filter: blur(6px) saturate(1.2);
+        background: conic-gradient(
+          from 220deg,
+          transparent 0deg,
+          rgba(243,100,33,0.7) 42deg,
+          rgba(0,190,255,0.6) 92deg,
+          transparent 145deg
+        );
+        mask-image: radial-gradient(circle at 50% 50%, transparent 52%, black 62%, transparent 76%);
+        transform-origin: 50% 50%;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-arc {
+          animation: 
+            heroArcRotate 20s linear infinite,
+            heroArcBreathe 3s ease-in-out infinite;
+        }
+
+        @keyframes heroArcRotate {
+          from { transform: rotate(0deg) scale(1.02); }
+          to   { transform: rotate(360deg) scale(1.02); }
+        }
+
+        @keyframes heroArcBreathe {
+          0%, 100% { opacity: 0.12; }
+          50% { opacity: 0.22; }
+        }
+
+        @keyframes noiseShift {
+          0% { transform: translate(0,0); }
+          10% { transform: translate(-5%,-5%); }
+          20% { transform: translate(-10%,5%); }
+          30% { transform: translate(5%,-10%); }
+          40% { transform: translate(-5%,15%); }
+          50% { transform: translate(-10%,5%); }
+          60% { transform: translate(15%,0); }
+          70% { transform: translate(0,10%); }
+          80% { transform: translate(-15%,0); }
+          90% { transform: translate(10%,5%); }
+          100% { transform: translate(5%,0); }
+        }
+        #surface-noise {
+          animation: noiseShift 8s steps(10) infinite;
+        }
+
+        .hero-bg-animate { animation: heroDrift 16s ease-in-out infinite alternate; }
+        @keyframes heroDrift {
+          from { transform: translate3d(0, 0, 0) scale(1.03); }
+          to { transform: translate3d(0, -15px, 0) scale(1.04); }
+        }
+        
+        .reveal {
+          opacity: 0;
+          transform: translateY(10px);
+          filter: blur(6px);
+          transition: 
+            opacity 650ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            filter 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+
+        @keyframes sweep {
+          0% { left: -100%; opacity: 0; }
+          10% { opacity: 0.3; }
+          90% { opacity: 0.3; }
+          100% { left: 200%; opacity: 0; }
+        }
+        .animate-sweep {
+          position: absolute;
+          top: 0; height: 1px; width: 40%;
+          background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+          animation: sweep 14s ease-in-out infinite;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; filter: none; }
+        #surface-noise { display: none; }
+        .hero-arc { animation: none; transform: rotate(15deg) scale(1.02); opacity: 0.1; }
+      }
+
+      /* Fallback: ensure content is visible if JS fails or is slow */
+      .reveal {
+        animation: revealFallback 0s 2s forwards;
+      }
+      @keyframes revealFallback {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+      .reveal.active {
+        animation: none;
+      }
+
+      .hover-lift {
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s, box-shadow 0.2s;
+      }
+      .hover-lift:hover {
+        transform: translateY(-1px);
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .svg-pulse { animation: svgPulse 3.5s ease-in-out infinite alternate; }
+        @keyframes svgPulse {
+          0% { opacity: 0.25; transform: scale(0.95); }
+          100% { opacity: 0.75; transform: scale(1.05); }
+        }
+        
+        .svg-dash {
+          stroke-dasharray: 12;
+          animation: svgDash 30s linear infinite;
+        }
+        @keyframes svgDash {
+          to { stroke-dashoffset: 120; }
+        }
+
+        @keyframes catchDrift {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        .light-catch {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+          background-size: 200% 100%;
+          animation: catchDrift 10s linear infinite;
+        }
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="surface-noise" aria-hidden="true"></div>
+    <div id="global-grid" aria-hidden="true"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
