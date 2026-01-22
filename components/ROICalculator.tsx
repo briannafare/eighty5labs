@@ -35,19 +35,19 @@ export const ROICalculator: React.FC = () => {
   };
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="container-custom">
-        <div className="framed-section grid lg:grid-cols-[1.3fr_1.7fr] min-h-[500px] shadow-sm">
-          <div className="p-12 md:p-16 border-r border-black/[0.08] flex flex-col justify-center bg-white">
-            <div className="flex items-center gap-3 mb-8">
+        <div className="framed-section grid lg:grid-cols-[1.3fr_1.7fr] min-h-[450px] shadow-sm">
+          <div className="p-8 md:p-12 border-r border-black/[0.08] flex flex-col justify-center bg-white">
+            <div className="flex items-center gap-3 mb-6">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f36421" strokeWidth="2.5" className="opacity-60"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
               <span className="text-[12px] font-black text-black/40 uppercase tracking-widest">Recovery Engine</span>
             </div>
-            <h2 className="text-[36px] md:text-[48px] font-black tracking-tighter text-black leading-[1.1] mb-12">
+            <h2 className="text-[32px] md:text-[42px] font-black tracking-tighter text-black leading-[1.1] mb-8">
               What's it actually worth? <span className="text-black/30">Stop guessing. See what agents recover.</span>
             </h2>
-            
-            <div className="space-y-8 max-w-sm">
+
+            <div className="space-y-6 max-w-sm">
               <div>
                 <div className="flex justify-between mb-3">
                   <label className="text-[11px] font-black text-black/40 uppercase tracking-widest">Weekly Calls</label>
@@ -72,7 +72,7 @@ export const ROICalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-[#fafafa] relative flex items-center justify-center p-8 md:p-16">
+          <div className="bg-[#fafafa] relative flex items-center justify-center p-6 md:p-10">
             <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
             
             <div className="w-full max-w-lg bg-white rounded-xl border border-black/[0.08] shadow-xl p-10 relative z-10 overflow-hidden">

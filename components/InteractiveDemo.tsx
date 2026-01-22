@@ -45,28 +45,28 @@ export const InteractiveDemo: React.FC = () => {
   }, [activeScenario]);
 
   return (
-    <section className="py-32 border-t border-black/[0.04]">
+    <section className="border-t border-black/[0.04]">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-[11px] font-black tracking-[0.4em] text-zinc-400 uppercase mb-4 block">Interactive Demo</span>
-            <h2 className="text-5xl md:text-6xl font-[900] tracking-tight text-black mb-6">This is Chloe.</h2>
-            <p className="text-xl text-warm mb-10 font-medium tracking-tight">She's not a person—she's your 24/7 AI receptionist.</p>
-            
-            <ul className="space-y-4 mb-10">
+            <span className="text-[11px] font-black tracking-[0.4em] text-zinc-400 uppercase mb-3 block">Interactive Demo</span>
+            <h2 className="text-4xl md:text-5xl font-[900] tracking-tight text-black mb-4">This is Chloe.</h2>
+            <p className="text-lg md:text-xl text-warm mb-6 font-medium tracking-tight">She's not a person—she's your 24/7 AI receptionist.</p>
+
+            <ul className="space-y-3 mb-6">
               {['Answer a call', 'Qualify the lead', 'Book an appointment', 'Send confirmation'].map(item => (
-                <li key={item} className="flex items-center gap-3 text-black font-bold text-lg tracking-tight">
-                  <div className="w-6 h-6 rounded-md bg-black flex items-center justify-center">
-                    <svg className="text-white" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><path d="M20 6L9 17l-5-5"/></svg>
+                <li key={item} className="flex items-center gap-2.5 text-black font-bold text-base md:text-lg tracking-tight">
+                  <div className="w-5 h-5 rounded-md bg-black flex items-center justify-center">
+                    <svg className="text-white" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><path d="M20 6L9 17l-5-5"/></svg>
                   </div>
                   {item}
                 </li>
               ))}
             </ul>
-            
-            <p className="text-lg font-bold text-black mb-8">All in under 90 seconds.</p>
-            
-            <div className="flex gap-2 mb-8">
+
+            <p className="text-base md:text-lg font-bold text-black mb-6">All in under 90 seconds.</p>
+
+            <div className="flex gap-2 mb-6">
               {['Emergency', 'Routine', 'After-hours'].map(sc => (
                 <button 
                   key={sc}
