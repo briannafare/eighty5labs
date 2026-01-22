@@ -81,8 +81,8 @@
         border-top: 1px solid var(--border);
         background: transparent;
         width: 100%;
-        padding-top: clamp(48px, 7vw, 88px);
-        padding-bottom: clamp(48px, 7vw, 88px);
+        padding-top: clamp(40px, 5vw, 64px);
+        padding-bottom: clamp(40px, 5vw, 64px);
       }
 
       .section-frame .container-custom::before,
@@ -127,7 +127,7 @@
         inset: -40%;
         pointer-events: none;
         z-index: 1;
-        opacity: 0.16;
+        opacity: 0.2;
         filter: blur(6px) saturate(1.2);
         background: conic-gradient(
           from 220deg,
@@ -153,8 +153,8 @@
         }
 
         @keyframes heroArcBreathe {
-          0%, 100% { opacity: 0.12; }
-          50% { opacity: 0.22; }
+          0%, 100% { opacity: 0.16; }
+          50% { opacity: 0.32; }
         }
 
         @keyframes noiseShift {
@@ -240,10 +240,10 @@
       }
 
       @media (prefers-reduced-motion: no-preference) {
-        .svg-pulse { animation: svgPulse 3.5s ease-in-out infinite alternate; }
+        .svg-pulse { animation: svgPulse 2.5s ease-in-out infinite alternate; }
         @keyframes svgPulse {
-          0% { opacity: 0.25; transform: scale(0.95); }
-          100% { opacity: 0.75; transform: scale(1.05); }
+          0% { opacity: 0.3; transform: scale(0.9); }
+          100% { opacity: 1; transform: scale(1.15); }
         }
         
         .svg-dash {

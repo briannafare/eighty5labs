@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-[80px] md:pt-[100px] pb-12 md:pb-16 min-h-[80vh] md:min-h-0 flex flex-col items-center justify-center overflow-hidden bg-[#fbfbfa]">
+    <section className="relative pt-[100px] md:pt-[120px] pb-12 md:pb-16 min-h-[80vh] md:min-h-0 flex flex-col items-center justify-center overflow-hidden bg-[#fbfbfa]">
       {/* Background Image Stacking Level 0 */}
       <div 
         className="hero-bg hero-bg-animate absolute pointer-events-none z-[0]" 
@@ -43,10 +43,6 @@ export const Hero: React.FC = () => {
 
       {/* Hero Content Stacking Level 3 */}
       <div className="hero-content container-custom text-center relative z-[3] flex flex-col items-center">
-        <p className="text-[10px] md:text-[11px] font-[900] tracking-[0.5em] uppercase text-black/40 mb-4 md:mb-6">
-          Agentic Marketing Infrastructure
-        </p>
-
         <h1 className="text-[36px] md:text-[clamp(36px,4.4vw,58px)] font-[900] tracking-[-0.045em] leading-[1.02] mb-5 md:mb-7 text-balance">
           <span className="text-black">Stop babysitting your marketing.</span><br />
           <span className="text-zinc-400 opacity-60">Start running your business.</span>

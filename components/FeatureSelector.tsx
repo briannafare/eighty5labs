@@ -66,7 +66,7 @@ const CapabilityTile = ({ title, icon: Icon, color, desc }: { title: string, ico
 export const FeatureSelector: React.FC = () => {
   return (
     <div className="container-custom">
-      <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-16 relative">
+      <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-10 relative">
          <div className="max-w-xl text-left">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-4 h-[1px] bg-[#eb00ff] opacity-40"></div>
