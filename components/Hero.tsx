@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-[48px] md:pt-[60px] pb-12 md:pb-16 min-h-[80vh] md:min-h-0 flex flex-col items-center justify-center overflow-hidden bg-[#fbfbfa]">
+    <section className="relative pt-[80px] md:pt-[100px] pb-12 md:pb-16 min-h-[80vh] md:min-h-0 flex flex-col items-center justify-center overflow-hidden bg-[#fbfbfa]">
       {/* Background Image Stacking Level 0 */}
       <div 
         className="hero-bg hero-bg-animate absolute pointer-events-none z-[0]" 
