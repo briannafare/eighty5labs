@@ -46,27 +46,27 @@ const LifecycleIllustration = () => (
 );
 
 const ProductCard = ({ title, desc, label, accentColor, illustration: Illustration }: { title: string, desc: string, label: string, accentColor: string, illustration: React.ComponentType }) => (
-  <div className="p-10 md:p-14 flex flex-col h-full group transition-all duration-300 relative bg-white hover:bg-neutral-50/30 hover-lift overflow-hidden">
+  <div className="p-6 md:p-8 flex flex-col h-full group transition-all duration-300 relative bg-white hover:bg-neutral-50/30 hover-lift overflow-hidden">
     {/* Pattern 3: Light Catch Drift */}
     <div className="absolute top-0 left-0 w-full h-[1px] light-catch opacity-50 z-20"></div>
 
     <div className="relative z-10 mb-auto">
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-4">
         <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }}></span>
         <span className="text-[10px] font-[900] text-black/30 uppercase tracking-[0.3em]">{label}</span>
       </div>
-      <h3 className="text-2xl font-[900] text-black tracking-tighter mb-4">{title}</h3>
-      <p className="text-[15px] text-zinc-500 leading-relaxed mb-12 font-medium tracking-tight">{desc}</p>
-      
-      <div className="mt-auto mb-12">
-        <button className="w-11 h-11 rounded-full border border-black/5 bg-white flex items-center justify-center hover:border-black/20 transition-all shadow-sm">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <h3 className="text-xl font-[900] text-black tracking-tighter mb-3">{title}</h3>
+      <p className="text-[14px] text-zinc-500 leading-relaxed mb-6 font-medium tracking-tight">{desc}</p>
+
+      <div className="mt-auto mb-4">
+        <button className="w-9 h-9 rounded-full border border-black/5 bg-white flex items-center justify-center hover:border-black/20 transition-all shadow-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
 
-      <div className="w-full aspect-[1.4/1] rounded-[12px] border border-black/[0.05] bg-[#fafafa] relative overflow-hidden group-hover:border-black/10 transition-colors">
+      <div className="w-full aspect-[1.4/1] rounded-[10px] border border-black/[0.05] bg-[#fafafa] relative overflow-hidden group-hover:border-black/10 transition-colors">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
-        <div className="absolute inset-x-8 bottom-0 top-12 bg-white rounded-t-lg border-x border-t border-black/[0.06] shadow-sm overflow-hidden flex items-center justify-center p-2">
+        <div className="absolute inset-x-6 bottom-0 top-8 bg-white rounded-t-lg border-x border-t border-black/[0.06] shadow-sm overflow-hidden flex items-center justify-center p-2">
            <Illustration />
         </div>
       </div>
@@ -77,10 +77,10 @@ const ProductCard = ({ title, desc, label, accentColor, illustration: Illustrati
 export const PlatformSection: React.FC = () => {
   return (
     <div className="container-custom" id="platform">
-      <div className="mb-16">
-        <p className="text-[10px] font-black tracking-[0.5em] text-zinc-400 uppercase mb-5">The Platform</p>
-        <h2 className="text-4xl md:text-6xl font-[900] tracking-tighter text-black mb-8">Three agents. <span className="text-black/30">Zero gaps.</span></h2>
-        <p className="text-zinc-600 text-[19px] max-w-2xl tracking-tight font-medium leading-relaxed">
+      <div className="mb-8">
+        <p className="text-[10px] font-black tracking-[0.5em] text-zinc-400 uppercase mb-4">The Platform</p>
+        <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter text-black mb-5">Three agents. <span className="text-black/30">Zero gaps.</span></h2>
+        <p className="text-zinc-600 text-[17px] max-w-2xl tracking-tight font-medium leading-relaxed">
           Deploy autonomous AI that handles the work you can't get to—and the work you didn't know you were missing.
         </p>
       </div>
@@ -111,13 +111,13 @@ export const PlatformSection: React.FC = () => {
         />
       </div>
       
-      <div className="border border-black/[0.08] border-t-0 rounded-b-[16px] p-12 md:p-16 flex flex-col md:flex-row gap-12 items-center bg-white/40 backdrop-blur-sm">
+      <div className="border border-black/[0.08] border-t-0 rounded-b-[16px] p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center bg-white/40 backdrop-blur-sm">
          <div className="flex-grow max-w-xl text-left">
-            <div className="flex items-center gap-3 mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-black/15"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <div className="flex items-center gap-3 mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-black/15"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
               <span className="text-[11px] font-[900] text-black/40 uppercase tracking-[0.35em]">Deployment</span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-[900] tracking-tighter text-black mb-6 leading-snug">
+            <h3 className="text-xl md:text-2xl font-[900] tracking-tighter text-black mb-5 leading-snug">
               Live in 48 hours. <span className="text-black/30">Deep CRM integration. Zero IT overhead.</span>
             </h3>
             <button className="btn-pill bg-black text-white">
@@ -125,12 +125,12 @@ export const PlatformSection: React.FC = () => {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
          </div>
-         <div className="w-full md:w-[280px] aspect-square border border-black/[0.08] rounded-xl bg-white shadow-sm flex items-center justify-center relative overflow-hidden group">
+         <div className="w-full md:w-[220px] aspect-square border border-black/[0.08] rounded-xl bg-white shadow-sm flex items-center justify-center relative overflow-hidden group">
             <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
-            <div className="relative w-32 h-32 flex items-center justify-center">
+            <div className="relative w-24 h-24 flex items-center justify-center">
                <div className="absolute inset-0 border border-black/[0.04] rounded-full animate-[spin_20s_linear_infinite]"></div>
-               <div className="absolute inset-6 border border-black/[0.06] rounded-full animate-[spin_12s_linear_infinite_reverse]"></div>
-               <div className="w-14 h-14 bg-black rounded-xl flex items-center justify-center text-white shadow-2xl z-10 group-hover:scale-110 transition-transform duration-500">
+               <div className="absolute inset-4 border border-black/[0.06] rounded-full animate-[spin_12s_linear_infinite_reverse]"></div>
+               <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white shadow-2xl z-10 group-hover:scale-110 transition-transform duration-500">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2z"/></svg>
                </div>
             </div>
