@@ -23,7 +23,7 @@ export const LeadCaptureModal: React.FC<LeadCaptureModalProps> = ({ isOpen, onCl
 
     try {
       // TODO: Replace with your actual GHL webhook URL
-      const webhookUrl = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID';
+      const webhookUrl = 'https://services.leadconnectorhq.com/hooks/n21oYUwglqe3bTsxL2RS/webhook-trigger/30a44d56-e446-4edb-b46c-35ea27a538cd';
 
       await fetch(webhookUrl, {
         method: 'POST',
