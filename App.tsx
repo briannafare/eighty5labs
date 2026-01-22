@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProblemSection } from './components/ProblemSection';
@@ -10,9 +10,11 @@ import { HowItWorks } from './components/HowItWorks';
 import { ResultsSection } from './components/ResultsSection';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { LeadCaptureModal } from './components/LeadCaptureModal';
 
 const App: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Small delay to ensure DOM is ready
@@ -48,40 +50,68 @@ const App: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Global click handler for all CTA buttons
+    const handleCTAClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const button = target.closest('button');
+
+      if (button && (
+        button.textContent?.includes('Get Your Free Audit') ||
+        button.textContent?.includes('Start Your Free Audit') ||
+        button.textContent?.includes('Get Your Custom Analysis')
+      )) {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsModalOpen(true);
+      }
+    };
+
+    document.addEventListener('click', handleCTAClick, true);
+
+    return () => {
+      document.removeEventListener('click', handleCTAClick, true);
+    };
+  }, []);
+
   return (
-    <div className="app-shell flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
-        <Hero />
-        
-        <div className="reveal section-frame">
-          <ProblemSection />
-        </div>
-        
-        <div className="reveal section-frame">
-          <PlatformSection />
-        </div>
-        
-        <div className="reveal section-frame">
-          <InteractiveDemo />
-        </div>
-        
-        <div className="reveal section-frame">
-          <ROICalculator />
-        </div>
-        
-        <div className="reveal section-frame">
-          <HowItWorks />
-        </div>
-        
-        <div className="reveal section-frame">
-          <ResultsSection />
-        </div>
-        
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div className="app-shell flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Hero />
+
+          <div className="reveal section-frame">
+            <ProblemSection />
+          </div>
+
+          <div className="reveal section-frame">
+            <PlatformSection />
+          </div>
+
+          <div className="reveal section-frame">
+            <InteractiveDemo />
+          </div>
+
+          <div className="reveal section-frame">
+            <ROICalculator />
+          </div>
+
+          <div className="reveal section-frame">
+            <HowItWorks />
+          </div>
+
+          <div className="reveal section-frame">
+            <ResultsSection />
+          </div>
+
+          <FinalCTA />
+        </main>
+        <Footer />
+      </div>
+
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 };
 
