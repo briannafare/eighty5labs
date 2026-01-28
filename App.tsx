@@ -11,10 +11,25 @@ import { ResultsSection } from './components/ResultsSection';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
+import { OptInForm } from './components/OptInForm';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsConditions } from './components/TermsConditions';
 
 const App: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentRoute, setCurrentRoute] = useState(window.location.hash || '#/');
+
+  // Handle hash-based routing
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentRoute(window.location.hash || '#/');
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     // Small delay to ensure DOM is ready
@@ -74,40 +89,73 @@ const App: React.FC = () => {
     };
   }, []);
 
+  // Render page based on route
+  const renderPage = () => {
+    switch (currentRoute) {
+      case '#/privacy':
+        return (
+          <>
+            <PrivacyPolicy />
+            <Footer />
+          </>
+        );
+      case '#/terms':
+        return (
+          <>
+            <TermsConditions />
+            <Footer />
+          </>
+        );
+      case '#/optin':
+        return (
+          <>
+            <OptInForm />
+            <Footer />
+          </>
+        );
+      default:
+        return (
+          <>
+            <Navbar />
+            <main className="flex-grow">
+              <Hero />
+
+              <div className="reveal section-frame">
+                <ProblemSection />
+              </div>
+
+              <div className="reveal section-frame">
+                <PlatformSection />
+              </div>
+
+              <div className="reveal section-frame">
+                <InteractiveDemo />
+              </div>
+
+              <div className="reveal section-frame">
+                <ROICalculator />
+              </div>
+
+              <div className="reveal section-frame">
+                <HowItWorks />
+              </div>
+
+              <div className="reveal section-frame">
+                <ResultsSection />
+              </div>
+
+              <FinalCTA />
+            </main>
+            <Footer />
+          </>
+        );
+    }
+  };
+
   return (
     <>
       <div className="app-shell flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Hero />
-
-          <div className="reveal section-frame">
-            <ProblemSection />
-          </div>
-
-          <div className="reveal section-frame">
-            <PlatformSection />
-          </div>
-
-          <div className="reveal section-frame">
-            <InteractiveDemo />
-          </div>
-
-          <div className="reveal section-frame">
-            <ROICalculator />
-          </div>
-
-          <div className="reveal section-frame">
-            <HowItWorks />
-          </div>
-
-          <div className="reveal section-frame">
-            <ResultsSection />
-          </div>
-
-          <FinalCTA />
-        </main>
-        <Footer />
+        {renderPage()}
       </div>
 
       <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
