@@ -18,15 +18,14 @@ import { TermsConditions } from './components/TermsConditions';
 const App: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentRoute, setCurrentRoute] = useState(window.location.hash || '#/');
+  const [currentRoute, setCurrentRoute] = useState(window.location.hash || '');
 
-  // Handle hash-based routing
+  // Handle hash-based routing for sub-pages
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentRoute(window.location.hash || '#/');
+      setCurrentRoute(window.location.hash || '');
       window.scrollTo(0, 0);
     };
-
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
@@ -89,73 +88,69 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // Render page based on route
-  const renderPage = () => {
-    switch (currentRoute) {
-      case '#/privacy':
-        return (
-          <>
-            <PrivacyPolicy />
-            <Footer />
-          </>
-        );
-      case '#/terms':
-        return (
-          <>
-            <TermsConditions />
-            <Footer />
-          </>
-        );
-      case '#/optin':
-        return (
-          <>
-            <OptInForm />
-            <Footer />
-          </>
-        );
-      default:
-        return (
-          <>
-            <Navbar />
-            <main className="flex-grow">
-              <Hero />
+  // Render sub-pages based on hash route
+  if (currentRoute === '#/privacy') {
+    return (
+      <div className="app-shell flex flex-col min-h-screen">
+        <PrivacyPolicy />
+        <Footer />
+      </div>
+    );
+  }
 
-              <div className="reveal section-frame">
-                <ProblemSection />
-              </div>
+  if (currentRoute === '#/terms') {
+    return (
+      <div className="app-shell flex flex-col min-h-screen">
+        <TermsConditions />
+        <Footer />
+      </div>
+    );
+  }
 
-              <div className="reveal section-frame">
-                <PlatformSection />
-              </div>
+  if (currentRoute === '#/optin') {
+    return (
+      <div className="app-shell flex flex-col min-h-screen">
+        <OptInForm />
+        <Footer />
+      </div>
+    );
+  }
 
-              <div className="reveal section-frame">
-                <InteractiveDemo />
-              </div>
-
-              <div className="reveal section-frame">
-                <ROICalculator />
-              </div>
-
-              <div className="reveal section-frame">
-                <HowItWorks />
-              </div>
-
-              <div className="reveal section-frame">
-                <ResultsSection />
-              </div>
-
-              <FinalCTA />
-            </main>
-            <Footer />
-          </>
-        );
-    }
-  };
-
+  // Default: Main landing page
   return (
     <>
       <div className="app-shell flex flex-col min-h-screen">
-        {renderPage()}
+        <Navbar />
+        <main className="flex-grow">
+          <Hero />
+
+          <div className="reveal section-frame">
+            <ProblemSection />
+          </div>
+
+          <div className="reveal section-frame">
+            <PlatformSection />
+          </div>
+
+          <div className="reveal section-frame">
+            <InteractiveDemo />
+          </div>
+
+          <div className="reveal section-frame">
+            <ROICalculator />
+          </div>
+
+          <div className="reveal section-frame">
+            <HowItWorks />
+          </div>
+
+          <div className="reveal section-frame">
+            <ResultsSection />
+          </div>
+
+          <FinalCTA />
+        </main>
+        <Footer />
       </div>
 
       <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
