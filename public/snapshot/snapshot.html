@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Local Authority Snapshot - See how you show up and how competitive you really are in your local market.">
-    <title>Local Authority Snapshot™ - Out of This World AI</title>
+    <meta name="description" content="Business Snapshot - See how you show up and how competitive you really are in your local market.">
+    <title>Business Snapshot - Eighty5 Labs</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="snapshot-form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="container nav-container">
-            <a href="index.html" class="logo">OUT OF THIS WORLD AI</a>
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2z"/></svg>
+                eighty5labs
+            </a>
             <a href="index.html" class="nav-back-link">← Back to Home</a>
         </div>
     </nav>
@@ -25,7 +28,7 @@
         <div class="form-container">
             <!-- Form Header -->
             <div class="form-header">
-                <h1 class="form-title">Local Authority Snapshot™</h1>
+                <h1 class="form-title">Business Snapshot</h1>
                 <p class="form-subtitle">See how you show up — and how competitive you really are in your local market.</p>
             </div>
 
@@ -41,15 +44,15 @@
                     </div>
                     <div class="progress-step" data-step="2">
                         <div class="step-circle">2</div>
-                        <span class="step-label">Market</span>
+                        <span class="step-label">Business</span>
                     </div>
                     <div class="progress-step" data-step="3">
                         <div class="step-circle">3</div>
-                        <span class="step-label">Assets</span>
+                        <span class="step-label">Online</span>
                     </div>
                     <div class="progress-step" data-step="4">
                         <div class="step-circle">4</div>
-                        <span class="step-label">Experience</span>
+                        <span class="step-label">Operations</span>
                     </div>
                     <div class="progress-step" data-step="5">
                         <div class="step-circle">5</div>
@@ -63,7 +66,7 @@
 
                 <!-- Step 1: Contact Details -->
                 <div class="form-step active" data-step="1">
-                    <h2 class="step-title">Authority Contact Details</h2>
+                    <h2 class="step-title">Contact Details</h2>
                     <p class="step-description">Let's start with the basics so we can send you your results.</p>
 
                     <div class="form-group">
@@ -111,10 +114,23 @@
                     </div>
                 </div>
 
-                <!-- Step 2: Local Market Footprint -->
+                <!-- Step 2: Business Information -->
                 <div class="form-step" data-step="2">
-                    <h2 class="step-title">Local Market Footprint</h2>
-                    <p class="step-description">Help us understand your service area.</p>
+                    <h2 class="step-title">Business Information</h2>
+                    <p class="step-description">Help us understand your business and market.</p>
+
+                    <div class="form-group">
+                        <label for="businessName" class="form-label">
+                            Business Name
+                        </label>
+                        <input
+                            type="text"
+                            id="businessName"
+                            name="businessName"
+                            class="form-input"
+                            data-field="business_name"
+                        >
+                    </div>
 
                     <div class="form-group">
                         <label for="primaryCity" class="form-label">
@@ -143,22 +159,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="brokerage" class="form-label">
-                            Brokerage <span class="optional">(optional)</span>
+                        <label for="industry" class="form-label">
+                            Industry <span class="optional">(optional)</span>
                         </label>
                         <input
                             type="text"
-                            id="brokerage"
-                            name="brokerage"
+                            id="industry"
+                            name="industry"
                             class="form-input"
-                            data-field="brokerage"
+                            placeholder="e.g., HVAC, Plumbing, Real Estate, etc."
+                            data-field="industry"
                         >
                     </div>
                 </div>
 
-                <!-- Step 3: Public Visibility Assets -->
+                <!-- Step 3: Online Presence -->
                 <div class="form-step" data-step="3">
-                    <h2 class="step-title">Public Visibility Assets</h2>
+                    <h2 class="step-title">Online Presence</h2>
                     <p class="step-description">Where can prospects find you online?</p>
 
                     <div class="form-group">
@@ -190,72 +207,34 @@
                     </div>
                 </div>
 
-                <!-- Step 4: Experience & Positioning -->
+                <!-- Step 4: Current Operations -->
                 <div class="form-step" data-step="4">
-                    <h2 class="step-title">Experience & Positioning</h2>
-                    <p class="step-description">Tell us about your expertise and focus.</p>
+                    <h2 class="step-title">Current Operations</h2>
+                    <p class="step-description">Tell us about how you handle leads today.</p>
 
                     <div class="form-group">
                         <label class="form-label">
-                            Years in Real Estate
+                            Estimated Weekly Inbound Calls/Leads
                         </label>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="yearsExperience" value="0-2" data-field="years_in_real_estate">
-                                <span class="radio-label">0–2 years</span>
+                                <input type="radio" name="weeklyLeads" value="0-10" data-field="weekly_leads">
+                                <span class="radio-label">0-10</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="yearsExperience" value="3-5" data-field="years_in_real_estate">
-                                <span class="radio-label">3–5 years</span>
+                                <input type="radio" name="weeklyLeads" value="11-25" data-field="weekly_leads">
+                                <span class="radio-label">11-25</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="yearsExperience" value="6-10" data-field="years_in_real_estate">
-                                <span class="radio-label">6–10 years</span>
+                                <input type="radio" name="weeklyLeads" value="26-50" data-field="weekly_leads">
+                                <span class="radio-label">26-50</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="yearsExperience" value="10+" data-field="years_in_real_estate">
-                                <span class="radio-label">10+ years</span>
+                                <input type="radio" name="weeklyLeads" value="50+" data-field="weekly_leads">
+                                <span class="radio-label">50+</span>
                             </label>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="form-label">
-                            Primary Focus <span class="optional">(select all that apply)</span>
-                        </label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="primaryFocus" value="buyers" data-field="primary_focus">
-                                <span class="checkbox-label">Buyers</span>
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="primaryFocus" value="sellers" data-field="primary_focus">
-                                <span class="checkbox-label">Sellers</span>
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="primaryFocus" value="both" data-field="primary_focus">
-                                <span class="checkbox-label">Both</span>
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="primaryFocus" value="investors" data-field="primary_focus">
-                                <span class="checkbox-label">Investors</span>
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="primaryFocus" value="luxury" data-field="primary_focus">
-                                <span class="checkbox-label">Luxury</span>
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="primaryFocus" value="commercial" data-field="primary_focus">
-                                <span class="checkbox-label">Commercial</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 5: Engagement & Automation Readiness -->
-                <div class="form-step" data-step="5">
-                    <h2 class="step-title">Engagement & Automation Readiness</h2>
-                    <p class="step-description">Let's understand your current systems and goals.</p>
 
                     <div class="form-group">
                         <label class="form-label">
@@ -275,8 +254,8 @@
                                 <span class="checkbox-label">AI assistant</span>
                             </label>
                             <label class="checkbox-option">
-                                <input type="checkbox" name="inquiryHandling" value="not-sure" data-field="inquiry_handling">
-                                <span class="checkbox-label">I'm not sure</span>
+                                <input type="checkbox" name="inquiryHandling" value="staff" data-field="inquiry_handling">
+                                <span class="checkbox-label">Staff/receptionist</span>
                             </label>
                             <label class="checkbox-option">
                                 <input type="checkbox" name="inquiryHandling" value="unanswered" data-field="inquiry_handling">
@@ -284,18 +263,56 @@
                             </label>
                         </div>
                     </div>
+                </div>
+
+                <!-- Step 5: Goals -->
+                <div class="form-step" data-step="5">
+                    <h2 class="step-title">Your Goals</h2>
+                    <p class="step-description">What would make the biggest impact for your business?</p>
 
                     <div class="form-group">
-                        <label for="improvements" class="form-label">
-                            What are you hoping to improve most right now? <span class="optional">(optional)</span>
+                        <label class="form-label">
+                            What are you hoping to improve most? <span class="optional">(select all that apply)</span>
+                        </label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="goals" value="lead-response" data-field="goals">
+                                <span class="checkbox-label">Faster lead response time</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="goals" value="more-reviews" data-field="goals">
+                                <span class="checkbox-label">More online reviews</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="goals" value="missed-calls" data-field="goals">
+                                <span class="checkbox-label">Stop missing calls</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="goals" value="automation" data-field="goals">
+                                <span class="checkbox-label">More automation</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="goals" value="customer-followup" data-field="goals">
+                                <span class="checkbox-label">Better customer follow-up</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="goals" value="less-admin" data-field="goals">
+                                <span class="checkbox-label">Less admin work</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalNotes" class="form-label">
+                            Anything else you'd like us to know? <span class="optional">(optional)</span>
                         </label>
                         <textarea
-                            id="improvements"
-                            name="improvements"
+                            id="additionalNotes"
+                            name="additionalNotes"
                             class="form-textarea"
                             rows="4"
                             placeholder="Share your thoughts..."
-                            data-field="improvement_goals"
+                            data-field="additional_notes"
                         ></textarea>
                     </div>
                 </div>
@@ -309,7 +326,7 @@
                         Next →
                     </button>
                     <button type="submit" class="btn btn-primary btn-submit" id="submitBtn" style="display: none;">
-                        Get My Local Authority Snapshot™
+                        Get My Business Snapshot
                     </button>
                 </div>
 
@@ -338,12 +355,15 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3 class="footer-logo">OUT OF THIS WORLD AI</h3>
-                    <p class="footer-tagline">Systems that work while you focus on business.</p>
+                    <h3 class="footer-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2z"/></svg>
+                        eighty5labs
+                    </h3>
+                    <p class="footer-tagline">Agentic marketing infrastructure for businesses that refuse to miss revenue.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Out of This World AI. All rights reserved.</p>
+                <p>&copy; 2026 Eighty5 Labs (Aida LLC). All rights reserved. | <a href="/#/privacy">Privacy Policy</a> | <a href="/#/terms">Terms & Conditions</a></p>
             </div>
         </div>
     </footer>

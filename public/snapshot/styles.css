@@ -1,6 +1,6 @@
 /* ============================================
-   MODERN CSS - OUT OF THIS WORLD AI
-   Design inspired by ronasit.com aesthetic
+   EIGHTY5 LABS - SNAPSHOT PAGES
+   Cohesive with main eighty5labs.com branding
    ============================================ */
 
 /* ============================================
@@ -13,15 +13,16 @@
 }
 
 :root {
-    /* Color Palette - Clean & Professional */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1e40af;
-    --color-primary-light: #3b82f6;
+    /* Color Palette - Eighty5 Labs Branding */
+    --color-primary: #f36421;
+    --color-primary-dark: #e55810;
+    --color-primary-light: #ff7a3d;
     --color-secondary: #0f172a;
-    --color-accent: #f59e0b;
+    --color-accent: #0070f3;
 
     /* Neutrals */
     --color-white: #ffffff;
+    --color-bg: #fbfbfa;
     --color-gray-50: #f8fafc;
     --color-gray-100: #f1f5f9;
     --color-gray-200: #e2e8f0;
@@ -40,6 +41,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --font-weight-black: 900;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -60,6 +62,7 @@
     --border-radius-md: 0.5rem;
     --border-radius-lg: 1rem;
     --border-radius-xl: 1.5rem;
+    --border-radius-pill: 999px;
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -77,17 +80,20 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--color-gray-900);
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
     overflow-x: hidden;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* ============================================
    TYPOGRAPHY
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-black);
     line-height: 1.2;
     color: var(--color-gray-900);
+    letter-spacing: -0.03em;
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
@@ -122,9 +128,9 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(251, 251, 250, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     z-index: 1000;
     transition: all var(--transition-base);
 }
@@ -141,12 +147,20 @@ p {
 }
 
 .logo {
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
     font-weight: var(--font-weight-bold);
     color: var(--color-gray-900);
     text-decoration: none;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
     transition: color var(--transition-fast);
+}
+
+.logo-icon {
+    width: 24px;
+    height: 24px;
 }
 
 .logo:hover {
@@ -230,7 +244,7 @@ p {
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS - Eighty5 Labs Style
    ============================================ */
 .btn {
     display: inline-block;
@@ -238,7 +252,7 @@ p {
     font-size: 1rem;
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-pill);
     transition: all var(--transition-base);
     cursor: pointer;
     border: 2px solid transparent;
@@ -248,36 +262,37 @@ p {
 .btn-primary {
     background: var(--color-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
 }
 
 .btn-primary:hover {
-    background: var(--color-primary-dark);
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 0 40px -10px var(--color-primary);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--color-gray-900);
-    border: 2px solid var(--color-gray-300);
+    border: 2px solid rgba(0, 0, 0, 0.12);
 }
 
 .btn-secondary:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
-    background: var(--color-gray-50);
+    background: rgba(243, 100, 33, 0.05);
 }
 
 .btn-primary-nav {
     background: var(--color-primary);
     color: var(--color-white);
     padding: 0.625rem 1.5rem;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-pill);
 }
 
 .btn-primary-nav:hover {
-    background: var(--color-primary-dark);
+    background: var(--color-primary-light);
 }
 
 .btn-large {
@@ -293,7 +308,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    background: var(--color-bg);
     position: relative;
     padding: var(--spacing-3xl) 0;
     margin-top: 70px;
@@ -311,7 +326,7 @@ p {
 .hero-title {
     margin-bottom: var(--spacing-lg);
     color: var(--color-gray-900);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-black);
 }
 
 .hero-subtitle {
@@ -373,9 +388,9 @@ p {
 .divider-text {
     text-align: center;
     color: var(--color-white);
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-semibold);
-    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 3px;
     text-transform: uppercase;
     margin: 0;
 }
@@ -388,7 +403,7 @@ p {
 }
 
 .section:nth-child(even) {
-    background: var(--color-gray-50);
+    background: var(--color-white);
 }
 
 .section-intro {
@@ -429,7 +444,7 @@ p {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
-    border: 1px solid var(--color-gray-200);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .service-card:hover {
@@ -588,8 +603,8 @@ p {
     top: 0;
     left: 0;
     font-size: 4rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-gray-200);
+    font-weight: var(--font-weight-black);
+    color: rgba(243, 100, 33, 0.15);
     line-height: 1;
 }
 
@@ -622,7 +637,7 @@ p {
     border-radius: var(--border-radius-lg);
     text-align: center;
     transition: all var(--transition-base);
-    border: 2px solid var(--color-gray-200);
+    border: 2px solid rgba(0, 0, 0, 0.06);
 }
 
 .result-card:hover {
@@ -679,7 +694,7 @@ p {
     border-radius: var(--border-radius-md);
     margin-bottom: var(--spacing-md);
     overflow: hidden;
-    border: 1px solid var(--color-gray-200);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     transition: all var(--transition-base);
 }
 
@@ -710,6 +725,7 @@ p {
 .faq-icon {
     flex-shrink: 0;
     transition: transform var(--transition-base);
+    color: var(--color-primary);
 }
 
 .faq-item.active .faq-icon {
@@ -736,7 +752,7 @@ p {
    FINAL CTA
    ============================================ */
 .final-cta {
-    background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
+    background: var(--color-gray-900);
     color: var(--color-white);
 }
 
@@ -791,9 +807,10 @@ p {
    FOOTER
    ============================================ */
 .footer {
-    background: var(--color-gray-900);
-    color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-gray-900);
     padding: var(--spacing-3xl) 0 var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-content {
@@ -810,13 +827,17 @@ p {
 }
 
 .footer-logo {
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-sm);
 }
 
 .footer-tagline {
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
+    font-size: 0.95rem;
 }
 
 .footer-links {
@@ -824,8 +845,11 @@ p {
 }
 
 .footer-column h4 {
-    color: var(--color-white);
-    font-size: 1rem;
+    color: var(--color-gray-900);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: var(--spacing-md);
 }
 
@@ -838,8 +862,9 @@ p {
 }
 
 .footer-column a {
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
     text-decoration: none;
+    font-size: 0.95rem;
     transition: color var(--transition-fast);
 }
 
@@ -850,8 +875,19 @@ p {
 .footer-bottom {
     text-align: center;
     padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--color-gray-800);
-    color: var(--color-gray-500);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--color-gray-400);
+    font-size: 0.875rem;
+}
+
+.footer-bottom a {
+    color: var(--color-gray-400);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-bottom a:hover {
+    color: var(--color-primary);
 }
 
 /* ============================================

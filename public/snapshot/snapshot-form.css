@@ -111,7 +111,7 @@
     background: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-white);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 4px rgba(243, 100, 33, 0.15);
     transform: scale(1.1);
 }
 
@@ -250,7 +250,7 @@
 .form-textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 3px rgba(243, 100, 33, 0.15);
 }
 
 .form-input.error {
@@ -314,7 +314,7 @@
 /* Selected State */
 .radio-option:has(input:checked),
 .checkbox-option:has(input:checked) {
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(243, 100, 33, 0.05);
     border-color: var(--color-primary);
 }
 
