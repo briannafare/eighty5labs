@@ -14,6 +14,8 @@ import { LeadCaptureModal } from './components/LeadCaptureModal';
 import { OptInForm } from './components/OptInForm';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsConditions } from './components/TermsConditions';
+import { SnapshotForm } from './components/SnapshotForm';
+import { SnapshotConfirmation } from './components/SnapshotConfirmation';
 
 const App: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -96,6 +98,12 @@ const App: React.FC = () => {
   }
   if (currentRoute === '#/optin') {
     return <OptInForm />;
+  }
+  if (currentRoute === '#/snapshot') {
+    return <SnapshotForm />;
+  }
+  if (currentRoute === '#/snapshot-confirmation') {
+    return <SnapshotConfirmation />;
   }
 
   return (
