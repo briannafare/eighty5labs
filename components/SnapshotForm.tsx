@@ -49,7 +49,7 @@ export const SnapshotForm: React.FC = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [hasPartialSubmitted, setHasPartialSubmitted] = useState(false);
 
-  const webhookUrl = 'https://services.leadconnectorhq.com/hooks/n21oYUwglqe3bTsxL2RS/webhook-trigger/94bbb4c3-cab5-4aef-98f3-754b9e225ae8';
+  const webhookUrl = 'https://services.leadconnectorhq.com/hooks/n21oYUwglqe3bTsxL2RS/webhook-trigger/af4e33bf-f01f-4721-80e6-bc3e40d28a45';
 
   // Send partial data when user has entered required fields but hasn't completed
   useEffect(() => {
