@@ -11,10 +11,24 @@ import { ResultsSection } from './components/ResultsSection';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
+import { OptInForm } from './components/OptInForm';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsConditions } from './components/TermsConditions';
 
 const App: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentRoute, setCurrentRoute] = useState(window.location.hash || '');
+
+  // Handle hash-based routing for sub-pages
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentRoute(window.location.hash || '');
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     // Small delay to ensure DOM is ready
@@ -74,6 +88,35 @@ const App: React.FC = () => {
     };
   }, []);
 
+  // Render sub-pages based on hash route
+  if (currentRoute === '#/privacy') {
+    return (
+      <div className="app-shell flex flex-col min-h-screen">
+        <PrivacyPolicy />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentRoute === '#/terms') {
+    return (
+      <div className="app-shell flex flex-col min-h-screen">
+        <TermsConditions />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentRoute === '#/optin') {
+    return (
+      <div className="app-shell flex flex-col min-h-screen">
+        <OptInForm />
+        <Footer />
+      </div>
+    );
+  }
+
+  // Default: Main landing page
   return (
     <>
       <div className="app-shell flex flex-col min-h-screen">
