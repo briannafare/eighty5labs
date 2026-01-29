@@ -36,13 +36,12 @@ export const Footer: React.FC = () => {
             ]} 
           />
           
-          <FooterColumn
-            title="Company"
+          <FooterColumn 
+            title="Company" 
             links={[
               { label: 'About', href: '#' },
-              { label: 'Contact', href: 'mailto:bri@eighty5labs.com' },
-              { label: 'SMS Opt-In', href: '#/optin' },
-            ]}
+              { label: 'Contact', href: 'mailto:hello@eighty5labs.com' },
+            ]} 
           />
           
           <FooterColumn 
@@ -55,10 +54,10 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center pt-8 border-t border-black/[0.05] gap-6">
-          <span className="text-[13px] text-black/40 font-medium">© 2026 eighty5labs (Aida LLC)</span>
+          <span className="text-[13px] text-black/40 font-medium">© 2025 eighty5labs</span>
           <div className="flex items-center gap-6">
-            <a href="#/privacy" className="text-[13px] text-black/40 hover:text-black transition-colors">Privacy Policy</a>
-            <a href="#/terms" className="text-[13px] text-black/40 hover:text-black transition-colors">Terms & Conditions</a>
+            <a href="#" className="text-[13px] text-black/40 hover:text-black transition-colors">Privacy</a>
+            <a href="#" className="text-[13px] text-black/40 hover:text-black transition-colors">Terms</a>
           </div>
         </div>
       </div>
