@@ -401,7 +401,7 @@ export const TermsConditions: React.FC = () => {
 
               <SectionTitle>12. Entire Agreement</SectionTitle>
               <p className="text-zinc-600 leading-relaxed">
-                These Terms and Conditions, together with our Privacy Policy, constitute the entire agreement between you and Eighty5 Labs regarding your use of our Website and Services. Any prior agreements, understandings, or representations are superseded by these Terms.
+                These Terms and Conditions, together with our <a href="#/privacy" className="text-[#f36421] hover:underline font-medium">Privacy Policy</a>, constitute the entire agreement between you and Eighty5 Labs regarding your use of our Website and Services. Any prior agreements, understandings, or representations are superseded by these Terms.
               </p>
 
               <SectionTitle>13. Assignment</SectionTitle>
@@ -441,8 +441,21 @@ export const TermsConditions: React.FC = () => {
             </div>
           </div>
 
-          {/* Back to Home */}
+          {/* Privacy Policy Link */}
           <div className="mt-8 text-center">
+            <a
+              href="#/privacy"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#f36421] hover:underline"
+            >
+              View our Privacy Policy
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          {/* Back to Home */}
+          <div className="mt-4 text-center">
             <a
               href="#/"
               className="inline-block btn-pill bg-black text-white px-8 py-3 text-sm font-semibold hover:bg-black/80 transition-colors"
