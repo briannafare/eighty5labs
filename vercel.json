@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/local-authority-snapshot",
+      "destination": "https://local-authority-snapshot.vercel.app/"
+    },
+    {
+      "source": "/local-authority-snapshot/:path*",
+      "destination": "https://local-authority-snapshot.vercel.app/:path*"
+    }
+  ]
+}
