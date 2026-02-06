@@ -164,10 +164,14 @@ export const OptInForm: React.FC = () => {
                   </label>
                 </div>
 
-                {/* Terms of Service & Privacy Policy Link */}
-                <div>
-                  <a href="#/terms" className="text-sm text-[#f36421] hover:underline font-medium">
-                    Terms of Service &amp; Privacy Policy
+                {/* Terms of Service & Privacy Policy Links */}
+                <div className="text-sm">
+                  <a href="#/terms" className="text-[#f36421] hover:underline font-medium">
+                    Terms of Service
+                  </a>
+                  {' '}&amp;{' '}
+                  <a href="#/privacy" className="text-[#f36421] hover:underline font-medium">
+                    Privacy Policy
                   </a>
                 </div>
 
