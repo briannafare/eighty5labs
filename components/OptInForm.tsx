@@ -78,10 +78,10 @@ export const OptInForm: React.FC = () => {
           {/* A2P 10DLC Compliant Heading */}
           <div className="text-center mb-5">
             <h1 className="text-[clamp(22px,3.5vw,32px)] font-[900] tracking-tighter text-black mb-2">
-              Aida LLC DBA Eighty5Labs &ndash; Appointment Updates &amp; SMS Alerts
+              Aida LLC &ndash; Appointment Updates &amp; SMS Alerts
             </h1>
             <p className="text-sm text-zinc-600 max-w-lg mx-auto leading-relaxed">
-              Aida LLC DBA Eighty5Labs. Use this form to join the Eighty5Labs SMS program for updates related to our services.
+              Aida LLC. Use this form to join the Aida LLC SMS program for updates related to our services.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export const OptInForm: React.FC = () => {
                     className="mt-1 w-4 h-4 rounded border-gray-300 text-[#f36421] focus:ring-[#f36421] flex-shrink-0"
                   />
                   <label htmlFor="marketingConsent" className="text-sm text-zinc-700 leading-relaxed">
-                    I consent to receive marketing text messages from Eighty5Labs at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                    I consent to receive marketing text messages from Aida LLC at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
                   </label>
                 </div>
 
@@ -160,7 +160,7 @@ export const OptInForm: React.FC = () => {
                     className="mt-1 w-4 h-4 rounded border-gray-300 text-[#f36421] focus:ring-[#f36421] flex-shrink-0"
                   />
                   <label htmlFor="nonMarketingConsent" className="text-sm text-zinc-700 leading-relaxed">
-                    I consent to receive non-marketing text messages from Eighty5Labs about my order updates, appointment reminders etc. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                    I consent to receive non-marketing text messages from Aida LLC about my order updates, appointment reminders etc. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
                   </label>
                 </div>
 
@@ -201,7 +201,7 @@ export const OptInForm: React.FC = () => {
                 </div>
                 <h2 className="text-xl font-bold text-black mb-2">You're Subscribed!</h2>
                 <p className="text-zinc-600 mb-4 text-sm">
-                  Thank you for signing up. You'll start receiving text messages from Eighty5 Labs.
+                  Thank you for signing up. You'll start receiving text messages from Aida LLC.
                 </p>
                 <div className="bg-[#fafafa] rounded-lg p-3 text-sm text-zinc-600 max-w-xs mx-auto">
                   <p className="mb-1"><strong>Remember:</strong></p>
@@ -220,7 +220,7 @@ export const OptInForm: React.FC = () => {
 
           {/* Contact Info */}
           <div className="mt-6 text-center text-sm text-zinc-500">
-            <p className="font-semibold text-black mb-1">Eighty5 Labs (Aida LLC)</p>
+            <p className="font-semibold text-black mb-1">Aida LLC</p>
             <p>
               Email: <a href="mailto:bri@eighty5labs.com" className="text-[#f36421] hover:underline">bri@eighty5labs.com</a>
               {' '}|{' '}
