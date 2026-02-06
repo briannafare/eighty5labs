@@ -78,7 +78,7 @@ export const OptInForm: React.FC = () => {
           {/* A2P 10DLC Compliant Heading */}
           <div className="text-center mb-5">
             <h1 className="text-[clamp(22px,3.5vw,32px)] font-[900] tracking-tighter text-black mb-2">
-              Eighty5Labs &ndash; Appointment Updates &amp; SMS Alerts
+              Aida LLC DBA Eighty5Labs &ndash; Appointment Updates &amp; SMS Alerts
             </h1>
             <p className="text-sm text-zinc-600 max-w-lg mx-auto leading-relaxed">
               Aida LLC DBA Eighty5labs. Use this form to join the Eighty5 Labs SMS program for updates related to our services.
