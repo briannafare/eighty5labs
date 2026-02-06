@@ -81,7 +81,7 @@ export const OptInForm: React.FC = () => {
               Eighty5Labs &ndash; Appointment Updates &amp; SMS Alerts
             </h1>
             <p className="text-sm text-zinc-600 max-w-lg mx-auto leading-relaxed">
-              Eighty5Labs is a DBA of Aida LLC. Use this form to join the Eighty5 Labs SMS program for updates related to our services.
+              Aida LLC DBA Eighty5labs. Use this form to join the Eighty5 Labs SMS program for updates related to our services.
             </p>
           </div>
 
