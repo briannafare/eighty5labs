@@ -137,53 +137,33 @@ export const TermsConditions: React.FC = () => {
               </SubSection>
 
               <SubSection title="2.7 How to Opt Out of SMS">
-                <p className="text-zinc-600 leading-relaxed mb-3">
-                  You can stop receiving text messages from Eighty5 Labs at any time without penalty or loss of benefits:
+                <p className="text-zinc-600 leading-relaxed">
+                  You can cancel the SMS service at any time by replying STOP. After sending STOP, you will receive a confirmation message and will no longer receive SMS messages from us. If you wish to rejoin, simply sign up again as you did initially.
                 </p>
-                <div className="bg-[#fef3ed] border border-[#f36421]/20 rounded-lg p-4 mb-4">
-                  <p className="font-semibold text-black mb-2">Option 1: Text STOP</p>
-                  <ul className="list-disc pl-6 space-y-1 text-zinc-600">
-                    <li>Reply "STOP" to any text message from us</li>
-                    <li>You will receive a confirmation text acknowledging your opt-out</li>
-                    <li>We will remove your number from our messaging list within 24 hours</li>
-                  </ul>
-                </div>
-                <div className="bg-[#fef3ed] border border-[#f36421]/20 rounded-lg p-4 mb-4">
-                  <p className="font-semibold text-black mb-2">Option 2: Contact Us</p>
-                  <ul className="list-disc pl-6 space-y-1 text-zinc-600">
-                    <li>Email: <a href="mailto:bri@eighty5labs.com" className="text-[#f36421] hover:underline">bri@eighty5labs.com</a></li>
-                    <li>Phone: <a href="tel:5037043755" className="text-[#f36421] hover:underline">503-704-3755</a></li>
-                    <li>Specify that you wish to opt out of SMS messages</li>
-                  </ul>
-                </div>
-                <p className="text-zinc-600 leading-relaxed mb-2"><strong>After Opting Out:</strong></p>
-                <ul className="list-disc pl-6 space-y-2 text-zinc-600">
-                  <li>We will no longer send you marketing or promotional text messages</li>
-                  <li>You may continue to receive transactional messages (order confirmations, account updates, customer service responses)</li>
-                  <li>Re-opting in requires new, explicit consent</li>
-                </ul>
               </SubSection>
 
               <SubSection title="2.8 Help and Support">
-                <p className="text-zinc-600 leading-relaxed mb-3">
-                  Reply "HELP" to any text message from us to receive additional information about our texting service, or contact us:
+                <p className="text-zinc-600 leading-relaxed">
+                  If you are experiencing issues with the messaging program, reply HELP for assistance or contact us at <a href="mailto:bri@eighty5labs.com" className="text-[#f36421] hover:underline">bri@eighty5labs.com</a>.
                 </p>
-                <ul className="list-none pl-0 space-y-1 text-zinc-600">
-                  <li>Email: <a href="mailto:bri@eighty5labs.com" className="text-[#f36421] hover:underline">bri@eighty5labs.com</a></li>
-                  <li>Phone: <a href="tel:5037043755" className="text-[#f36421] hover:underline">503-704-3755</a></li>
-                  <li>Website: <a href="https://eighty5labs.com" className="text-[#f36421] hover:underline">https://eighty5labs.com</a></li>
-                </ul>
               </SubSection>
 
-              <SubSection title="2.9 Technical Issues">
-                <p className="text-zinc-600 leading-relaxed mb-2">
-                  If you experience technical issues with SMS delivery:
+              <SubSection title="2.9 Carrier Disclaimer">
+                <p className="text-zinc-600 leading-relaxed">
+                  Carriers are not liable for delayed or undelivered messages.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-zinc-600">
-                  <li>We will make reasonable efforts to troubleshoot</li>
-                  <li>Possible causes include carrier filtering, network issues, or your device settings</li>
-                  <li>We are not responsible for SMS messages blocked by your carrier or device</li>
-                </ul>
+              </SubSection>
+
+              <SubSection title="2.10 Rates &amp; Frequency Disclosure">
+                <p className="text-zinc-600 leading-relaxed">
+                  Message and data rates may apply. Message frequency may vary. For questions about your text or data plan, please contact your wireless provider.
+                </p>
+              </SubSection>
+
+              <SubSection title="2.11 Privacy">
+                <p className="text-zinc-600 leading-relaxed">
+                  If you have any questions regarding privacy, please review our <a href="#/privacy" className="text-[#f36421] hover:underline font-medium">Privacy Policy</a>.
+                </p>
               </SubSection>
 
               <SectionTitle>3. Intellectual Property Rights</SectionTitle>
