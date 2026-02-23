@@ -137,22 +137,13 @@ export const PrivacyPolicy: React.FC = () => {
                 </p>
               </SubSection>
 
-              <SubSection title="3.2 Data NOT Shared for Marketing">
-                <div className="bg-[#fef3ed] border border-[#f36421]/20 rounded-lg p-4 mb-4">
-                  <p className="text-zinc-700 font-semibold mb-2">Explicit Commitment:</p>
-                  <p className="text-zinc-600">
-                    We do NOT share the following information with any third parties or affiliates for marketing or promotional purposes:
+              <SubSection title="3.2 Non-Sharing Clause">
+                <div className="bg-[#fef3ed] border border-[#f36421]/20 rounded-lg p-5 mb-4">
+                  <p className="text-zinc-800 font-bold mb-3">Non-Sharing Clause</p>
+                  <p className="text-zinc-700 leading-relaxed">
+                    No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing with subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
                   </p>
                 </div>
-                <ul className="list-disc pl-6 space-y-2 text-zinc-600">
-                  <li>Mobile phone numbers and SMS opt-in data</li>
-                  <li>SMS consent records and messaging history</li>
-                  <li>Text message originator contact information</li>
-                  <li>Frequency or nature of SMS communications you receive from us</li>
-                </ul>
-                <p className="text-zinc-600 leading-relaxed mt-4 font-medium">
-                  All categories related to text messaging originator opt-in data, consent, and communication preferences are excluded from any sharing and will not be shared with any third parties.
-                </p>
               </SubSection>
 
               <SectionTitle>4. SMS/Text Messaging Terms</SectionTitle>
