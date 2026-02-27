@@ -17,12 +17,6 @@ export const OptInForm: React.FC = () => {
     e.preventDefault();
     setError('');
 
-    // At least one consent must be checked
-    if (!formData.marketingConsent && !formData.nonMarketingConsent) {
-      setError('Please select at least one consent option.');
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
