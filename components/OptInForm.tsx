@@ -195,7 +195,7 @@ export const OptInForm: React.FC = () => {
                 </div>
                 <h2 className="text-xl font-bold text-black mb-2">You're Subscribed!</h2>
                 <p className="text-zinc-600 mb-4 text-sm">
-                  Thank you for signing up. You'll start receiving text messages from Aida LLC.
+                  Thank you for signing up. If you've opted in, you'll start receiving text messages from Aida LLC.
                 </p>
                 <div className="bg-[#fafafa] rounded-lg p-3 text-sm text-zinc-600 max-w-xs mx-auto">
                   <p className="mb-1"><strong>Remember:</strong></p>
